@@ -28,6 +28,7 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -56,6 +57,11 @@ public class FBSDKPackage implements ReactPackage {
                 new FBShareAPIModule(reactContext),
                 new FBShareDialogModule(reactContext, mCallbackManager)
         );
+    }
+
+    @Override
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+        return new ArrayList<>();
     }
 
     @Override
